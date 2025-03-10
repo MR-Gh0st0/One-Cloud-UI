@@ -1,0 +1,116 @@
+---
+---
+
+<script>
+  import * as THREE from 'three';
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ 
+    alpha: true,
+    antialias: true 
+  });
+  
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.getElementById('cloud-animation')?.appendChild(renderer.domElement);
+
+  // Create multiple particle systems for layered effect
+  const createParticleSystem = (count, size, color, speed) => {
+    const geometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(count * 3);
+    const velocities = new Float32Array(count);
+
+    for (let i = 0; i < count * 3; i += 3) {
+      positions[i] = (Math.random() - 0.5) * 15;
+      positions[i + 1] = (Math.random() - 0.5) * 15;
+      positions[i + 2] = (Math.random() - 0.5) * 15;
+      velocities[i / 3] = Math.random() * speed;
+    }
+
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    
+    const material = new THREE.PointsMaterial({
+      size,
+      color,
+      transparent: true,
+      opacity: 0.6,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+    });
+
+    const particles = new THREE.Points(geometry, material);
+    scene.add(particles);
+    return { particles, positions, velocities };
+  };
+
+  // Create multiple particle systems with different properties
+  const particleSystems = [
+    createParticleSystem(2000, 0.05, 0x0ea5e9, 0.002), // Small, fast particles
+    createParticleSystem(1500, 0.08, 0x4f46e5, 0.001), // Medium particles
+    createParticleSystem(1000, 0.12, 0x6366f1, 0.0005), // Large, slow particles
+  ];
+
+  camera.position.z = 5;
+
+  // Mouse tracking with smooth interpolation
+  let targetX = 0;
+  let targetY = 0;
+  let currentX = 0;
+  let currentY = 0;
+
+  document.addEventListener('mousemove', (event) => {
+    targetX = (event.clientX / window.innerWidth) * 2 - 1;
+    targetY = -(event.clientY / window.innerHeight) * 2 + 1;
+  });
+
+  // Add touch support
+  document.addEventListener('touchmove', (event) => {
+    if (event.touches.length > 0) {
+      targetX = (event.touches[0].clientX / window.innerWidth) * 2 - 1;
+      targetY = -(event.touches[0].clientY / window.innerHeight) * 2 + 1;
+      event.preventDefault();
+    }
+  }, { passive: false });
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    // Smooth camera movement
+    currentX += (targetX - currentX) * 0.05;
+    currentY += (targetY - currentY) * 0.05;
+    camera.position.x = currentX * 2;
+    camera.position.y = currentY * 2;
+    camera.lookAt(scene.position);
+
+    // Animate particle systems
+    particleSystems.forEach(({ particles, positions, velocities }) => {
+      const positionArray = particles.geometry.attributes.position.array;
+      
+      for (let i = 0; i < positionArray.length; i += 3) {
+        positionArray[i + 1] += velocities[i / 3];
+        
+        // Reset particles when they move too far up
+        if (positionArray[i + 1] > 8) {
+          positionArray[i + 1] = -8;
+        }
+      }
+      
+      particles.geometry.attributes.position.needsUpdate = true;
+      particles.rotation.z += 0.0005;
+    });
+
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  // Responsive design
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+</script>
+
+<div id="cloud-animation" class="absolute inset-0 bg-gradient-to-b from-slate-950 to-slate-900"></div>
+

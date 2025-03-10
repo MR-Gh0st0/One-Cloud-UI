@@ -1,0 +1,85 @@
+---
+const projects = [
+  {
+    title: 'IaaS Cloud Platform for Enterprise',
+    description: 'Robust Infrastructure-as-a-Service (IaaS) solution designed for scalable enterprise-level cloud infrastructure and resource management.',
+    tech: ['AWS', 'Azure', 'VMware', 'Terraform'],
+    image: '🌐',
+  },
+  {
+    title: 'PaaS Application Development Suite',
+    description: 'A Platform-as-a-Service (PaaS) that streamlines application development, hosting, and scaling with pre-configured environments and automation.',
+    tech: ['Google Cloud', 'Docker', 'Kubernetes', 'Node.js'],
+    image: '💻',
+  },
+  {
+    title: 'SaaS-Based CRM System',
+    description: 'A Software-as-a-Service (SaaS) solution designed to help businesses manage customer relationships, sales, and data in the cloud.',
+    tech: ['Salesforce', 'React', 'Node.js', 'MongoDB'],
+    image: '📊',
+  },
+  {
+    title: 'Hybrid Cloud Integration Project',
+    description: 'Seamless integration of on-premise and cloud infrastructures to support data migration, scalability, and hybrid operations.',
+    tech: ['OpenStack', 'AWS', 'Azure', 'Cisco'],
+    image: '🔗',
+  },
+  {
+    title: 'Data Center Virtualization Solution',
+    description: 'Full-service data center virtualization project to improve resource utilization, cost efficiency, and cloud-ready capabilities.',
+    tech: ['VMware', 'Hyper-V', 'vSphere', 'Nutanix'],
+    image: '🏢',
+  },
+  {
+    title: 'Cloud Security Compliance Suite',
+    description: 'A comprehensive solution for maintaining cloud security standards and ensuring compliance with regulations such as GDPR and HIPAA.',
+    tech: ['AWS', 'Azure Security', 'CloudTrail', 'Terraform'],
+    image: '🛡️',
+  },
+  {
+    title: 'AI-Driven Predictive Analytics Platform',
+    description: 'Artificial Intelligence-powered platform offering real-time insights, trends, and predictions for better decision-making in businesses.',
+    tech: ['Python', 'TensorFlow', 'Power BI', 'BigQuery'],
+    image: '🤖',
+  },
+  {
+    title: 'Multi-Cloud Disaster Recovery Solution',
+    description: 'Multi-cloud disaster recovery plan leveraging AWS, Azure, and Google Cloud to ensure uptime and business continuity.',
+    tech: ['AWS', 'Azure', 'Google Cloud', 'Zerto'],
+    image: '☁️',
+  },
+];
+---
+
+<section id="projects" class="py-20 bg-slate-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold gradient-text">Featured Projects</h2>
+      <p class="mt-4 text-lg text-gray-400">
+        Innovative solutions for modern businesses
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {projects.map(project => (
+        <div class="group relative bg-slate-900 rounded-2xl p-6 gradient-border overflow-hidden transform transition-all duration-500 hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-br from-primary-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          
+          <div class="relative">
+            <div class="text-4xl mb-4">{project.image}</div>
+            <h3 class="text-xl font-bold text-white mb-2">{project.title}</h3>
+            <p class="text-gray-400 mb-4">{project.description}</p>
+            
+            <div class="flex flex-wrap gap-2">
+              {project.tech.map(tech => (
+                <span class="px-2 py-1 text-xs font-medium text-primary-300 bg-primary-900/30 rounded-full">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

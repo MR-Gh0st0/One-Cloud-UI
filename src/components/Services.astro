@@ -1,0 +1,80 @@
+---
+const services = [
+{
+    title: 'Server Consolidation & Virtualization',
+    description: 'Consolidate server resources and implement virtualization techniques to improve performance, reduce physical hardware, and enhance resource management.'
+},
+{
+    title: 'High Availability & Redundancy Solutions',
+    description: 'Design and deploy solutions that ensure continuous availability of critical services, preventing downtime with high-availability and redundancy configurations.'
+},
+{
+    title: 'Fault Tolerant Solution & Hyper-Converged Infrastructure',
+    description: 'Implement fault-tolerant systems and hyper-converged infrastructure to ensure operational resilience, combining compute, storage, and network functions in a unified system.'
+},
+{
+    title: 'Wireless Infrastructure & BYOD Solutions',
+    description: 'Create a secure and efficient wireless network infrastructure to support Bring Your Own Device (BYOD) initiatives, ensuring connectivity and security for all devices.'
+},
+{
+    title: 'Infrastructure Upgrade & Migration',
+    description: 'Upgrade legacy infrastructure to modern platforms and migrate systems seamlessly, ensuring minimal disruption while enhancing system performance and security.'
+},
+{
+    title: 'IT Infrastructure Setup for New Offices & Relocation',
+    description: 'Manage IT infrastructure setup for new office spaces or relocation projects, ensuring a seamless transition and operational readiness from day one.'
+},
+{
+    title: 'DC - DR Core Network Solutions',
+    description: 'Design and implement core network solutions for data centers and disaster recovery (DC/DR) to ensure uninterrupted operations and data integrity in case of emergencies.'
+},
+{
+    title: 'WAN Infrastructure',
+    description: 'Establish and optimize wide-area networks (WAN) to efficiently connect remote offices, data centers, and cloud environments with secure and reliable connections.'
+},
+{
+    title: 'Technical Transfer Services',
+    description: 'Empower your team with hands-on training, knowledge transfer, and technical documentation to effectively manage and maintain your IT systems.'
+},
+{
+    title: 'IaaS (Infrastructure as a Service)',
+    description: 'Leverage scalable cloud-based infrastructure solutions such as virtual machines, storage, and networking to host your applications and data without the need for physical hardware.'
+},
+{
+    title: 'ISP (Internet Service Provider) Solutions',
+    description: 'Deliver reliable and high-speed internet connectivity solutions for businesses, with managed services to ensure performance, availability, and security of your ISP infrastructure.'
+},
+{
+    title: 'VPS (Virtual Private Server) Solutions',
+    description: 'Provide flexible and isolated virtual private servers, offering businesses the control of a dedicated server with the cost-effectiveness and scalability of a virtualized environment.'
+}
+];
+
+---
+
+<section id="services" class="py-20 bg-slate-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold gradient-text">Our Services</h2>
+      <p class="mt-4 text-lg text-gray-400">
+        Comprehensive IT solutions tailored to your business needs
+      </p>
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      {services.map(service => (
+        <div
+          class="relative group bg-slate-800 p-6 rounded-2xl gradient-border transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+        >
+          <div class="text-4xl mb-4">{service.icon}</div>
+          <h3 class="text-xl font-semibold text-white mb-2">{service.title}</h3>
+          <p class="text-gray-400">{service.description}</p>
+          <div class="absolute inset-0 bg-primary-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
