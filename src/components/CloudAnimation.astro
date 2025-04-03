@@ -1,18 +1,24 @@
 ---
+
 ---
 
 <script>
-  import * as THREE from 'three';
+  import * as THREE from "three";
 
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer({ 
+  const camera = new THREE.PerspectiveCamera(
+    75,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000
+  );
+  const renderer = new THREE.WebGLRenderer({
     alpha: true,
-    antialias: true 
+    antialias: true,
   });
-  
+
   renderer.setSize(window.innerWidth, window.innerHeight);
-  document.getElementById('cloud-animation')?.appendChild(renderer.domElement);
+  document.getElementById("cloud-animation")?.appendChild(renderer.domElement);
 
   // Create multiple particle systems for layered effect
   const createParticleSystem = (count, size, color, speed) => {
@@ -27,8 +33,8 @@
       velocities[i / 3] = Math.random() * speed;
     }
 
-    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    
+    geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+
     const material = new THREE.PointsMaterial({
       size,
       color,
@@ -58,19 +64,23 @@
   let currentX = 0;
   let currentY = 0;
 
-  document.addEventListener('mousemove', (event) => {
+  document.addEventListener("mousemove", (event) => {
     targetX = (event.clientX / window.innerWidth) * 2 - 1;
     targetY = -(event.clientY / window.innerHeight) * 2 + 1;
   });
 
   // Add touch support
-  document.addEventListener('touchmove', (event) => {
-    if (event.touches.length > 0) {
-      targetX = (event.touches[0].clientX / window.innerWidth) * 2 - 1;
-      targetY = -(event.touches[0].clientY / window.innerHeight) * 2 + 1;
-      event.preventDefault();
-    }
-  }, { passive: false });
+  document.addEventListener(
+    "touchmove",
+    (event) => {
+      if (event.touches.length > 0) {
+        targetX = (event.touches[0].clientX / window.innerWidth) * 2 - 1;
+        targetY = -(event.touches[0].clientY / window.innerHeight) * 2 + 1;
+        event.preventDefault();
+      }
+    },
+    { passive: false }
+  );
 
   function animate() {
     requestAnimationFrame(animate);
@@ -85,16 +95,16 @@
     // Animate particle systems
     particleSystems.forEach(({ particles, positions, velocities }) => {
       const positionArray = particles.geometry.attributes.position.array;
-      
+
       for (let i = 0; i < positionArray.length; i += 3) {
         positionArray[i + 1] += velocities[i / 3];
-        
+
         // Reset particles when they move too far up
         if (positionArray[i + 1] > 8) {
           positionArray[i + 1] = -8;
         }
       }
-      
+
       particles.geometry.attributes.position.needsUpdate = true;
       particles.rotation.z += 0.0005;
     });
@@ -105,14 +115,15 @@
   animate();
 
   // Responsive design
-  window.addEventListener('resize', () => {
+  window.addEventListener("resize", () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
   });
 </script>
 
-
-
-<div id="cloud-animation" class="absolute inset-0 bg-gradient-to-b from-slate-950 to-slate-900"></div>
-
+<div
+  id="cloud-animation"
+  class="absolute inset-0 bg-gradient-to-b from-slate-950 to-slate-900"
+>
+</div>

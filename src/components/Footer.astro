@@ -1,18 +1,18 @@
 ---
 const links = {
   company: [
-  { text: 'Home', href: '#home' },
-  { text: 'About', href: '#about' },
-  { text: 'Journey', href: '#journey' },
-  { text: 'Services', href: '#services' },
-  { text: '1Cloud NG', href: '#cloud' },
-  { text: 'Projects', href: '#projects' },
+    { text: "Home", href: "#home" },
+    { text: "About", href: "#about" },
+    { text: "Journey", href: "#journey" },
+    { text: "Services", href: "#services" },
+    { text: "1Cloud NG", href: "#cloud" },
+    { text: "Projects", href: "#projects" },
   ],
-  social: [
-    { text: 'Twitter', href: '#', icon: '𝕏' },
-    { text: 'LinkedIn', href: '#', icon: '🔗' },
-    { text: 'GitHub', href: '#', icon: '📦' },
-  ],
+  // social: [
+  //   { text: "Twitter", href: "#", icon: "𝕏" },
+  //   { text: "LinkedIn", href: "#", icon: "🔗" },
+  //   { text: "Facebook", href: "#", icon: "📦" },
+  // ],
 };
 ---
 
@@ -22,42 +22,50 @@ const links = {
       <div>
         <a href="#" class="text-2xl font-bold gradient-text">One Cloud</a>
         <p class="mt-4 text-gray-400">
-          Transforming businesses through innovative cloud solutions and enterprise-grade IT services.
+          Transforming businesses through innovative cloud solutions and
+          enterprise-grade IT services.
         </p>
       </div>
-      
+
       <div>
         <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
         <ul class="space-y-2">
-          {links.company.map(link => (
-            <li>
-              <a href={link.href} class="text-gray-400 hover:text-white transition-colors duration-300">
-                {link.text}
-              </a>
-            </li>
-          ))}
+          {
+            links.company.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-gray-400 hover:text-white transition-colors duration-300"
+                >
+                  {link.text}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
-      
+
       <div>
         <h3 class="text-lg font-semibold text-white mb-4">Connect</h3>
         <div class="flex space-x-4">
-          {links.social.map(link => (
-            <a
-              href={link.href}
-              class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {link.icon}
-            </a>
-          ))}
+          <a href="#" class="text-gray-400 hover:text-white text-2xl">
+            <i class="fa-brands fa-facebook"></i>
+            <!-- Facebook -->
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white text-2xl">
+            <i class="fa-brands fa-linkedin"></i>
+            <!-- LinkedIn -->
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white text-2xl">
+            <i class="fa-brands fa-youtube"></i>
+            <!-- YouTube -->
+          </a>
         </div>
       </div>
     </div>
-    
-    <div class="mt-8 pt-8 border-t border-slate-800 text-center text-gray-400">
-      <p>&copy; {new Date().getFullYear()} 1Cloud. All rights reserved.</p>
-    </div>
+  </div>
+
+  <div class="mt-8 pt-8 border-t border-slate-800 text-center text-gray-400">
+    <p>&copy; {new Date().getFullYear()} 1Cloud. All rights reserved.</p>
   </div>
 </footer>
