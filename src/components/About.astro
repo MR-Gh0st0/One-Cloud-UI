@@ -1,7 +1,3 @@
----
-
----
-
 <section id="about1" class="py-20 bg-slate-950 relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
@@ -15,7 +11,7 @@
         <div class="w-16 h-[2px] bg-primary-600"></div>
       </div>
       <span
-        class="absolute bottom-0 left-0 w-full h-1 bg-primary-600/50"
+        class="absolute bottom-0 left-0 w-full h-1 bg-primary-600/50 transform scale-x-0 transition-all duration-500 group-hover:scale-x-100"
       ></span>
       <p class="mt-4 text-lg text-gray-400">
         One Cloud Technology is a System Integrator and founded in 2015,
@@ -33,35 +29,14 @@
       </p>
     </div>
 
+    <!-- Grid for Cards: 2 equal height columns -->
     <div
-      class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center justify-center"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-12 items-stretch justify-center"
     >
-      <!-- Card 1 - About -->
-      <div class="space-y-8">
+      <!-- Card 1 - Mission -->
+      <div class="h-full">
         <div
-          class="relative p-6 bg-slate-900 rounded-2xl gradient-border"
-        >
-          <div class="flex items-start space-x-4">
-            <div
-              class="flex-shrink-0 w-12 h-12 bg-primary-600/20 rounded-xl flex items-center justify-center"
-            >
-              <span class="text-2xl">💼</span>
-            </div>
-            <div>
-              <h3 class="text-xl font-semibold text-white mb-2">1Cloud NG</h3>
-              <p class="text-gray-400">
-                1Cloud NG – Next-gen Cloud Provider delivering IaaS, SaaS, and
-                PaaS solutions.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 2 - Mission -->
-      <div class="space-y-8">
-        <div
-          class="relative p-6 bg-slate-900 rounded-2xl gradient-border"
+          class="h-full flex flex-col p-6 bg-slate-900 rounded-2xl gradient-border"
         >
           <div class="flex items-start space-x-4">
             <div
@@ -72,18 +47,28 @@
             <div>
               <h3 class="text-xl font-semibold text-white mb-2">Mission</h3>
               <p class="text-gray-400">
-                Bank-grade security with end-to-end encryption and compliance
-                monitoring.
+                Helping customers to accelerate the business ambitions by
+                delivering innovative IT solutions and consistent quality
+                services at all time.
+                <br /><br />
+                Striving to exceed customers expectations to become selected vendor,
+                then to become preferred vendor.
+                <br /><br />
+                Continually communicate with, and learn from our Customers, in order
+                to improve our products and services.
+                <br /><br />
+                Being the partner of choice for a leading system integrator, build
+                and maintain the most innovative, reliable and cost-effective solution.
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Card 3 - Vision -->
-      <div class="space-y-8">
+      <!-- Card 2 - Vision -->
+      <div class="h-full">
         <div
-          class="relative p-6 bg-slate-900 rounded-2xl gradient-border"
+          class="h-full flex flex-col p-6 bg-slate-900 rounded-2xl gradient-border"
         >
           <div class="flex items-start space-x-4">
             <div
@@ -94,179 +79,15 @@
             <div>
               <h3 class="text-xl font-semibold text-white mb-2">Vision</h3>
               <p class="text-gray-400">
-                Monitor your infrastructure with real-time insights and
-                predictive analytics.
+                To achieve year to year sustainable growth through wide
+                portfolio of innovation, customer focused products and services
+                efficiently delivered by a professional and resourced team
+                through active communications.
               </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Centered Cloud Icon -->
-    <!-- <div class="relative mt-16">
-      <div class="aspect-square rounded-2xl bg-slate-900 p-8 gradient-border transform hover:scale-105 transition-transform duration-500">
-        <div class="relative h-full w-full">
-          <div class="absolute inset-0 flex items-center justify-center">
-            <div class="w-32 h-32 rounded-full bg-primary-600/20 animate-pulse"></div>
-          </div>
-          <div class="absolute inset-0 flex items-center justify-center">
-            <div class="text-6xl">☁️</div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-  </div>
-</section>
-
-<section id="about" class="py-20 bg-slate-950 relative overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl sm:text-4xl font-bold gradient-text">
-        Partnership with Vendors
-      </h2>
-      <div class="flex items-center justify-center mt-4 mb-4">
-        <div class="w-16 h-[2px] bg-primary-600"></div>
-        <span class="px-4 text-primary-600 font-semibold text-lg">vendors</span>
-        <div class="w-16 h-[2px] bg-primary-600"></div>
-      </div>
-
-      <p class="mt-4 text-lg text-gray-400">
-        <!-- description -->
-      </p>
-    </div>
-
-    <!-- Top Row with 4 Centered Logos -->
-    <div class="flex justify-center gap-12 mt-12">
-      <div
-        class="space-y-8 transform transition-all duration-300 hover:scale-105"
-      >
-        <img src="assets/partnership/Cisco-Gold-150x150.png" alt="CISCO" />
-      </div>
-      <div
-        class="space-y-8 transform transition-all duration-300 hover:scale-105"
-      >
-        <img
-          src="assets/partnership/paloalto-150x150.png"
-          alt="Paloalto"
-        />
-      </div>
-      <div
-        class="space-y-8 transform transition-all duration-300 hover:scale-105"
-      >
-        <img
-          src="assets/partnership/Dell-Platinum-150x150.png"
-          alt="Dell"
-        />
-      </div>
-      <div
-        class="space-y-8 transform transition-all duration-300 hover:scale-105"
-      >
-        <img
-          src="assets/partnership/VMware-Advanced-150x150.png"
-          alt="VMware"
-        />
-      </div>
-    </div>
-
-    <!-- Bottom Grid with 20 Logos -->
-    <div
-      class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-12 mt-12 items-center justify-center"
-    >
-      <!-- Repeat this div 20 times -->
-      <div
-        class="space-y-8 transform transition-all duration-300 hover:scale-105"
-      >
-        <img src="assets/partnership/A10.png" alt="" />
-      </div>
-      <div
-        class="space-y-8 transform transition-all duration-300 hover:scale-105"
-      >
-        <img src="assets/partnership/APC-copy.png" alt="" />
-      </div>
-      <div
-        class="space-y-8 transform transition-all duration-300 hover:scale-105"
-      >
-        <img src="assets/partnership/Check-Point-copy.png" alt="" />
-      </div>
-      <div
-        class="space-y-8 transform transition-all duration-300 hover:scale-105"
-      >
-        <img src="assets/partnership/f5-copy.png" alt="" />
-      </div>
-      <div
-        class="space-y-8 transform transition-all duration-300 hover:scale-105"
-      >
-        <img src="assets/partnership/Fortinet-copy.png" alt="" />
-      </div>
-      <div
-        class="space-y-8 transform transition-all duration-300 hover:scale-105"
-      >
-        <img src="assets/partnership/Hewlett-Packard-copy.png" alt="" />
-      </div>
-      <div
-        class="space-y-8 transform transition-all duration-300 hover:scale-105"
-      >
-        <img src="assets/partnership/imperva-copy.png" alt="" />
-      </div>
-      <div
-        class="space-y-8 transform transition-all duration-300 hover:scale-105"
-      >
-        <img src="assets/partnership/Infoblox-copy.png" alt="" />
-      </div>
-      <div
-        class="space-y-8 transform transition-all duration-300 hover:scale-105"
-      >
-        <img src="assets/partnership/Juniper-copy.png" alt="" />
-      </div>
-      <div
-        class="space-y-8 transform transition-all duration-300 hover:scale-105"
-      >
-        <img src="assets/partnership/Microsoft-copy.png" alt="" />
-      </div>
-      <div
-        class="space-y-8 transform transition-all duration-300 hover:scale-105"
-      >
-        <img src="assets/partnership/redhat-copy.png" alt="" />
-      </div>
-      <div
-        class="space-y-8 transform transition-all duration-300 hover:scale-105"
-      >
-        <img src="assets/partnership/sendQuick-copy.png" alt="" />
-      </div>
-      <div
-        class="space-y-8 transform transition-all duration-300 hover:scale-105"
-      >
-        <img src="assets/partnership/Sophos-copy.png" alt="" />
-      </div>
-      <div
-        class="space-y-8 transform transition-all duration-300 hover:scale-105"
-      >
-        <img src="assets/partnership/splunk-copy.png" alt="" />
-      </div>
-      <div
-        class="space-y-8 transform transition-all duration-300 hover:scale-105"
-      >
-        <img src="assets/partnership/Symantec-copy.png" alt="" />
-      </div>
-      <div
-        class="space-y-8 transform transition-all duration-300 hover:scale-105"
-      >
-        <img src="assets/partnership/Trendmicro-copy.png" alt="" />
-      </div>
-      <div
-        class="space-y-8 transform transition-all duration-300 hover:scale-105"
-      >
-        <img src="assets/partnership/Veritas-copy.png" alt="" />
-      </div>
-      <div
-        class="space-y-8 transform transition-all duration-300 hover:scale-105"
-      >
-        <img src="assets/partnership/zimbra-copy.png" alt="" />
-      </div>
-      <!-- <div class="space-y-8"><img src="assets/partnership/" alt="" /></div>
-  <div class="space-y-8"><img src="assets/partnership/" alt="" /></div>
-  <div class="space-y-8"><img src="assets/partnership/" alt="" /></div> -->
     </div>
   </div>
 </section>
