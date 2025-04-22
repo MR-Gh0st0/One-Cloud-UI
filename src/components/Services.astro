@@ -1,5 +1,6 @@
 ---
 const services = [
+<<<<<<< HEAD
 {
     title: 'Server Consolidation & Virtualization',
     description: 'Consolidate server resources and implement virtualization techniques to improve performance, reduce physical hardware, and enhance resource management.'
@@ -48,33 +49,114 @@ const services = [
     title: 'VPS (Virtual Private Server) Solutions',
     description: 'Provide flexible and isolated virtual private servers, offering businesses the control of a dedicated server with the cost-effectiveness and scalability of a virtualized environment.'
 },
+=======
+  {
+    title: "IT Infrastructure and System Integration Services",
+    description: [
+      "Server Consolidation/ Virtualization",
+      "High Availability/ Redundancy Solutions ",
+      "Fault Tolerant Solution & Hyper-Converged Infrastructure ",
+      "Wireless Infrastructure & BYOD Solutions ",
+      "Infrastructure Upgrade & Migration  ",
+      "IT Infrastructure Setup for New Offices & Relocation ",
+      "DC/DR Core Network Solutions",
+      "WAN infrastructure",
+    ],
+  },
+  {
+    title: "Cloud and Managed Services",
+    description: [
+      "Private and Public Solutions",
+      "Hybrid Solutions",
+      "Unified Communications ",
+      "Telepresence and Teleconference Solutions ",
+      "VOIP Solutions ",
+    ],
+  },
+  {
+    title: "Data Center ​Services​",
+    description: [
+      "Active-Active DC/DR Solutions",
+      "Storage & Backup Solutions",
+      "Project Management ",
+      "Delivering Cost Effective & Quality Solutions ",
+      "Software Defined Networking (SDN) and Virtualization",
+    ],
+  },
+  {
+    title: "Security and Compliance Services",
+    description: [
+      "Advanced Persistent Threat Protection ",
+      "Compliance Management ",
+      "Cybersecurity & Risk Management",
+      "Enabling & Optimizing SSL/TLS ",
+      "Web Application Firewalls ",
+      "DDoS Protection ",
+      "Data Center and Enterprise Security",
+      "PCI Compliant Solutions",
+      "Next Generation Firewalls ",
+      "Access Control and AAA ",
+    ],
+  },
+  {
+    title: "Consultation ​Services​",
+    description: [
+      "Gain external and objective advice with professional recommendations",
+      "Hire extra hands for one-time projects where the hiring of permanent employees is not necessary.",
+      "Acquire professional help in project scoping and planning.",
+      "Convert your business requirements into technical language",
+    ],
+  },
+  {
+    title: "Technical Transfer Services​",
+    description: ["Knowledge Sharing and Technical Transfer Services"],
+  },
+>>>>>>> 13505b7551ae426a9b4392646f57381614088e69
 ];
-
 ---
 
 <section id="services" class="py-20 bg-slate-900">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold gradient-text">Our Services</h2>
+      <!-- <h2 class="text-3xl sm:text-4xl font-bold gradient-text">Our Services</h2> -->
+      <h2 class="text-3xl sm:text-4xl font-bold gradient-text">
+        Solutions What We Do
+      </h2>
+
       <p class="mt-4 text-lg text-gray-400">
         Comprehensive IT solutions tailored to your business needs
       </p>
     </div>
 
-    <div class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-      {services.map(service => (
-        <div
-          class="relative group bg-slate-800 p-6 rounded-2xl gradient-border transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
-        >
-          <div class="text-4xl mb-4">{service.icon}</div>
-          <h3 class="text-xl font-semibold text-white mb-2">{service.title}</h3>
-          <p class="text-gray-400">{service.description}</p>
-          <div class="absolute inset-0 bg-primary-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        </div>
-      ))}
+    <div class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        services.map((service) => {
+          const descriptionList = Array.isArray(service.description) ? (
+            service.description.map((item, index) => (
+              <li key={index} style="list-style-type: disc; margin-left: 1em;">
+                {item}
+              </li>
+            ))
+          ) : (
+            <li style="list-style-type: disc; margin-left: 1em;">
+              {service.description}
+            </li>
+          );
+          return (
+            <div class="relative group bg-slate-800 p-6 rounded-2xl gradient-border transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <div class="text-4xl mb-4">{service.icon}</div>
+              <h3 class="text-xl font-semibold text-white mb-2 text-center min-h-[80px]">
+                {service.title}
+              </h3>
+              {/* <p>Description:</p> */}
+              <ul class="min-h-[150px] flex flex-col justify-start">
+                {descriptionList}
+              </ul>
+              <div class="absolute inset-0 bg-primary-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+          );
+        })
+      }
     </div>
   </div>
 </section>
-
-
-

@@ -14,7 +14,17 @@ const { title = "1Cloud - IT Services & Solutions" } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/src/assets/onecloudlogo.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="bg-slate-950 text-white font-['Inter']">
     <slot />
@@ -40,18 +50,26 @@ const { title = "1Cloud - IT Services & Solutions" } = Astro.props;
 
       requestAnimationFrame(raf);
     </script> -->
+<!-- <<<<<<< HEAD -->
     
-    
+<!-- 505b7551ae426a9b4392646f57381614088e69 -->
+
+
   </body>
 </html>
 
 <style is:global>
   :root {
-    --accent-gradient: linear-gradient(45deg, rgb(14, 165, 233), rgb(79, 70, 229) 30%, white 60%);
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(14, 165, 233),
+      rgb(79, 70, 229) 30%,
+      white 60%
+    );
   }
 
   html {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
     background: #13151a;
     background-size: 224px;
   }
@@ -65,8 +83,9 @@ const { title = "1Cloud - IT Services & Solutions" } = Astro.props;
   }
 
   .gradient-border {
-    background: linear-gradient(#13151a, #13151a) padding-box,
-                var(--accent-gradient) border-box;
+    background:
+      linear-gradient(#13151a, #13151a) padding-box,
+      var(--accent-gradient) border-box;
     border: 2px solid transparent;
   }
 </style>
